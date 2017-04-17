@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Here we have two buttons that are next to each other.
-Try pushing the Green Button."
+Try Swiping from Left to Right."
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
@@ -38,9 +38,20 @@ Try pushing the Green Button."
         android:id="@+id/button"
         android:layout_width="184dp"
         android:layout_height="116dp"
-        android:text="Press me"
-        android:layout_marginRight="16dp"
+        android:text="End Here"
+        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="48dp" />
+        android:layout_marginBottom="163dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="184dp"
+        android:layout_height="116dp"
+        android:text="Start Here"
+        tools:layout_editor_absoluteY="232dp"
+        app:layout_constraintRight_toLeftOf="@+id/button"
+        android:layout_marginRight="1dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>
