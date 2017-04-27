@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             }
+
         } //    c > x && c < (x + (width of)button)
         return false;
     }
