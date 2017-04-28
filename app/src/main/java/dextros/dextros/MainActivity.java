@@ -52,26 +52,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public boolean onTouchEvent(MotionEvent touchevent)
-    {
-        switch(touchevent.getAction())
-        {
-            case MotionEvent.ACTION_MOVE:
-            {
-                x1 = touchevent.getX();
-                y1 = touchevent.getY();
-                Log.d("LOOKATMEX", String.valueOf(x1));
-                Log.d("LOOKATMEY", String.valueOf(y1));
-                Button radbutton = (Button) findViewById(R.id.skiptutorial);
-                int rick[] = new int[2];
-                radbutton.getLocationOnScreen(rick);
-                Log.d("BIRDPERSON1", String.valueOf(rick[0]) );
-                Log.d("BIRDPERSON2", String.valueOf(rick[1]) );
 
-                break;
-            }
-
-        } //    c > x && c < (x + (width of)button)
-        return false;
-    }
 }

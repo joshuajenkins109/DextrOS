@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,7 +139,13 @@ public class TutorialStart extends AppCompatActivity {
                 mButtons.add((Button)child);
         }
     }*/
-
+    public int abs( int number)
+    {
+        if( number < 0)
+            return -1 * number;
+        else
+            return number;
+    }
 
     public void datAlg()
     {
@@ -152,14 +159,36 @@ public class TutorialStart extends AppCompatActivity {
                 maxIter = i;
             }
         }
+        if( (abs(WEIGHT.get(0) - WEIGHT.get(1)) <= 50) && (WEIGHT.get(0) != 0 && WEIGHT.get(1) != 0 ) )
+        {
+            relativeTie = true;
+        }
+       // Log.d("RandyDandy", String.valueOf(relativeTie));
 
-        //////// HEY JOSH
-        /// TO DO HANDLE TIE CASE
-        ////// NIPPLE
 
-        if(!relativeTie){
-            Intent intent = new Intent(this, MainActivity.class);
+        ////////
+        /// TO DO
+        //////  case:   both 0     : do nothing
+        /////   case:  one zero ( or only 1 button that has weight) :   click button
+        /////   case: button weight isnt close, but the lesser weight is still above a certain value
+
+        if( relativeTie)
+        {
+            Intent intent = new Intent(this, tutorial2.class);
             startActivity(intent);
+        }
+        else if( WEIGHT.get(0) != 0 || WEIGHT.get(1) != 0)
+        {
+            if( maxIter == 0)
+            {
+                TextView view = (TextView) findViewById(R.id.errormessage);
+                view.setText("You have selected Button B, please try to swipe equally across A and B");
+            }
+            else
+            {
+                TextView view = (TextView) findViewById(R.id.errormessage);
+                view.setText("You have selected Button A, please try to swipe equally across A and B");
+            }
         }
         for(int i = 0; i < WEIGHT.size(); i++)
         {

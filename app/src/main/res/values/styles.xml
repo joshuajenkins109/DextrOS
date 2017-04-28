@@ -17,4 +17,12 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Dextros" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/holo_blue_dark</item>
+        <item name="android:colorBackground">?attr/colorPrimaryDark</item>
+        <item name="android:textColorSecondary">@android:color/holo_blue_dark</item>
+        <item name="android:textColorSecondaryInverse">@android:color/holo_blue_dark</item>
+    </style>
+
 </resources>

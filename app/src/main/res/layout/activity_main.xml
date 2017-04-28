@@ -9,21 +9,21 @@
 
     <TextView
         android:id="@+id/greeting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to DextrOS! The dexterity helping app! (ok we should say something better here)"
+        android:layout_width="255dp"
+        android:layout_height="250dp"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:text="Welcome to DextrOS!\n\nThis demo will take you through the main features of DextrOS, a dexterity assistant for your mobile devices."
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/skiptutorial" />
+        android:layout_marginTop="57dp" />
 
     <Button
         android:id="@+id/nextpagebutton"
         android:layout_width="314dp"
-        android:layout_height="101dp"
+        android:layout_height="151dp"
+        android:textSize="20sp"
         android:text="Begin Tutorial"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -32,16 +32,6 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
-    <Button
-        android:id="@+id/skiptutorial"
-        android:layout_width="314dp"
-        android:layout_height="101dp"
-        android:text="Skip Tutorial"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/nextpagebutton" />
+
 
 </android.support.constraint.ConstraintLayout>
