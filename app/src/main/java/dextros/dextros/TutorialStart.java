@@ -68,6 +68,10 @@ public class TutorialStart extends AppCompatActivity {
                     Log.d("BIRDPERSON", String.valueOf(WEIGHT.get(0)));
                     Log.d("BIRDPERSONSCOMPANION", String.valueOf(WEIGHT.get(1)));
                 }
+                else if (touchevent.getAction() == MotionEvent.ACTION_DOWN)
+                {
+                    WEIGHT.set(0, (WEIGHT.get(0)+1));
+                }
                 else if (touchevent.getAction() == MotionEvent.ACTION_UP)
                 {
                     datAlg();
@@ -108,6 +112,10 @@ public class TutorialStart extends AppCompatActivity {
                     }
                     Log.d("BIRDPERSON", String.valueOf(WEIGHT.get(0)));
                     Log.d("BIRDPERSONSCOMPANION", String.valueOf(WEIGHT.get(1)));
+                }
+                else if (touchevent.getAction() == MotionEvent.ACTION_DOWN)
+                {
+                    WEIGHT.set(1, (WEIGHT.get(1)+1));
                 }
                 else if (touchevent.getAction() == MotionEvent.ACTION_UP)
                 {
