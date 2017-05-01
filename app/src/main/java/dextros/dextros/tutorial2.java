@@ -1,5 +1,6 @@
 package dextros.dextros;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,7 +65,7 @@ public class tutorial2 extends AppCompatActivity {
                 }
                 else if (touchevent.getAction() == MotionEvent.ACTION_UP)
                 {
-                    //datAlg();
+                    selectHighest();
                 }
                 return false;
             }
@@ -109,7 +110,7 @@ public class tutorial2 extends AppCompatActivity {
                 }
                 else if (touchevent.getAction() == MotionEvent.ACTION_UP)
                 {
-                    //datAlg();
+                    selectHighest();
                 }
                 return false;
             }
@@ -133,17 +134,59 @@ public class tutorial2 extends AppCompatActivity {
                 maxIter = i;
             }
         }
-        if( maxIter == 0)
+        if( maxIter == 0 && WEIGHT.get(0) != 0)
         {
             ///GO TO NEXT
-            //TextView view = (TextView) findViewById(R.id.errormessage);
-            //view.setText("You have selected Button B, please try to swipe equally across A and B");
+            //Intent go = new Intent(this, tutorial3.class);
+            //startActivity(go);
+            nextPage();
         }
         else
         {
             ///PRINT ERROR and possibly an explanation?
-            //TextView view = (TextView) findViewById(R.id.errormessage);
-            //view.setText("You have selected Button A, please try to swipe equally across A and B");
+            TextView view = (TextView) findViewById(R.id.tipmessage1);
+            view.setText("Tip: You have incorrectly selected B or the weights were equal, try swiping across A more to increase its weight for selection");
         }
+        for(int i = 0; i < WEIGHT.size(); i++)
+        {
+            WEIGHT.set(i, 0);
+        }
+    }
+    private void nextPage(){
+        Intent intent = new Intent(this, tutorial3.class);
+        startActivity(intent);
+    }
+    public boolean onTouchEvent(final MotionEvent touchevent)
+    {
+
+        switch(touchevent.getAction())
+        {
+            case MotionEvent.ACTION_MOVE:
+            {
+                x1 = touchevent.getX();
+                y1 = touchevent.getY();
+                Log.d("LOOKATMEX", String.valueOf(x1));
+                Log.d("LOOKATMEY", String.valueOf(y1));
+                int rick[] = new int[2];
+                boolean morty = false;
+
+                for(int jim = 0; jim < mButtons.size(); jim++ )
+                {
+                    mButtons.get(jim).getLocationOnScreen(rick);
+                    if (x1 >= rick[0] && x1 <= (rick[0] + mButtons.get(jim).getWidth()) && y1 >= rick[1] && y1 <= (rick[1] + mButtons.get(jim).getHeight())) {
+                        WEIGHT.set(jim, (WEIGHT.get(jim) + 1));
+                    }
+                }
+                Log.d("BIRDPERSON", String.valueOf(WEIGHT.get(0)));
+                Log.d("BIRDPERSONSCOMPANION", String.valueOf(WEIGHT.get(1)));
+                break;
+            }
+            case MotionEvent.ACTION_UP:
+            {
+                selectHighest();
+                break;
+            }
+        } //    c > x && c < (x + (width of)button)
+        return false;
     }
 }
