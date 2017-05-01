@@ -10,36 +10,50 @@
         android:id="@+id/button3"
         android:layout_width="190dp"
         android:layout_height="415dp"
-        android:text="Button"
-        android:layout_marginLeft="-5dp"
+        android:background="#FF33B5E5"
+        android:padding="5dp"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:text="A"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"
         app:layout_constraintRight_toLeftOf="@+id/button4"
         android:layout_marginRight="0dp"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteY="135dp" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="190dp"
         android:layout_height="415dp"
-        android:text="Button"
-        android:layout_marginRight="-5dp"
+        android:textSize="30sp"
+        android:padding="5dp"
+        android:text="B"
+        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.9" />
+        android:layout_marginBottom="16dp"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DextrOS detects that the weight of each button you swiped across is similar. It then expands the two buttons into two larger, easier to press, butttons."
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="35dp" />
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:textColor="#FF33B5E5"
+        android:text="DextrOS has expanded the two buttons for easier selection for those that may have issues with the accuracy of their touch. Once expanded DextrOS will select the button with the highest weight, even if the weights are similar. Please select button A to continue.  "
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>
