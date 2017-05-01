@@ -82,7 +82,7 @@ public class tutorial4 extends AppCompatActivity {
 
         if( WEIGHT.get(0) != 0)
         {
-            Intent intent = new Intent(this, TutorialStart.class);
+            Intent intent = new Intent(this, tutorial5.class);
             startActivity(intent);
         }
         for(int i = 0; i < WEIGHT.size(); i++)
